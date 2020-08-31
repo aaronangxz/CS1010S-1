@@ -17,8 +17,8 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
 
         start_time_hours = start_time / 60;
         start_time_mins = (start_time - (start_time_hours * 60));
-        start_time_secs = 0;
-        printf("Start: %s %d:%d:%d\n",dayofweek[n],start_time_hours,start_time_mins,start_time_secs);
+        start_time_secs = 00;
+        printf("Start: %s %d:%d\n",dayofweek[n],start_time_hours,start_time_mins);
     }
     
    
@@ -52,7 +52,7 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
 
 int main(void) {
     // You may change the inputs to the function for testing
-    double fare = taxi_fare(8, 10*60 + 30, 30, 15000);
+    double fare = taxi_fare(6, 10*60 + 30, 30, 15000);
     printf("The taxi fare is: $%.3f", fare);
     return 0;
 
