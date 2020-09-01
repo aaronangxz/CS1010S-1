@@ -16,6 +16,10 @@ int hrs_elapsed(int h0, int m0, int s0, int h1, int m1, int s1)
         {
             hours --;
         }
+        else if ((m1 == m0) && (s1 < s0))
+        {
+            hours --;
+        }
         else
         {
             hours = hours;
@@ -27,15 +31,15 @@ int hrs_elapsed(int h0, int m0, int s0, int h1, int m1, int s1)
 int mins_elapsed(int h0, int m0, int s0, int h1, int m1, int s1) 
     {
     int minutes = m1 - m0;
-        //When end seconds is smaller or equals to start seconds
+        //When end seconds is smaller to start seconds
         //minus 1 minute from total minutes
-        if (s1<=s0)
+        if (s1 < s0)
         {
             minutes -- ;
         }
         //When end minutes is smaller than start minutes
         //Add 60 to make it positive
-        if (m1<m0)
+        if (m1 < m0 || minutes < 0)
         {
             minutes = minutes + 60;
         }
@@ -68,9 +72,9 @@ int secs_elapsed(int h0, int m0, int s0, int h1, int m1, int s1)
 int main(void) 
 {    
     // edit the input to test
-    int h = hrs_elapsed(00, 20, 50, 00, 40, 30);
-    int m = mins_elapsed(00, 20, 50, 00, 40, 30);
-    int s = secs_elapsed(00, 20, 50, 00, 40, 30);
+    int h = hrs_elapsed(12, 29, 20, 12, 30, 30);
+    int m = mins_elapsed(12, 29, 20, 12, 30, 30);
+    int s = secs_elapsed(12, 29, 20, 12, 30, 30);
 
     printf("Your function output is h: %d, m: %d, s: %d\n", h, m, s);
     
