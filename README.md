@@ -19,6 +19,10 @@ This module aims to <br>
 1. Lab 0<br>
 2. Lab 1<br>
 
+**Problem Sets**<br>
+1. Problem Set 01: Freezer, Temperature Conversion, Time Elapsed, IP Address<br>
+2. Problem Set 02: Colourspace Conversion, Taxi Fare<br>
+
 **Extra**<br>
 1. Practice on Basic C Expressions<br>
 2. Practice on Branching<br>
