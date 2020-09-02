@@ -1,7 +1,5 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdbool.h>
-
-using namespace std;
 
 int number_of_digits(int num) {
     int count = 0;
@@ -25,9 +23,10 @@ int main(void) {
     int testcase2 = number_of_digits(55555);
     int testcase3 = number_of_digits(1000);
     int testcase4 = number_of_digits(1234);
-    cout << "Test case 1: " << testcase1 << endl;
-    cout << "Test case 2: " << testcase2 << endl;
-    cout << "Test case 3: " << testcase3 << endl;
-    cout << "Test case 4: " << testcase4 << endl;
+    printf("Test case 1: %d\n", testcase1);
+    printf("Test case 2: %d\n", testcase2);
+    printf("Test case 3: %d\n", testcase3);
+    printf("Test case 4: %d\n", testcase4);
+
     return 0;
 }
