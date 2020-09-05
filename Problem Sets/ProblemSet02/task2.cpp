@@ -4,9 +4,10 @@
 double taxi_fare(int weekday, int start_time, int speed, int distance) 
 {
     printf("Distance: %d\n",distance);
-    int weekday_input, start_time_hours, start_time_mins, start_time_secs, dist_elapsed = 0 ;
+    int weekday_input, start_time_hours, start_time_mins, start_time_secs, dist_elapsed = 0,time_elapsed ;
     double base_fare = 3.40, fare = 0, surcharge = 0, dist_remain = 0;
     char dayofweek[7][100] = {"Mon", "Tue","Wed","Thu","Fri","Sat","Sun"};
+    
     if (weekday < 1 || weekday > 7)
     {
         printf("Invalid day!\n");
@@ -71,12 +72,17 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
 
     //Flag down fare
     fare = base_fare * surcharge;
+    
     dist_elapsed += 1000;
+    
     dist_remain = distance - dist_elapsed;
+    
+    time_elapsed = start_time + (dist_elapsed / 500); 
+    
     printf("Distance elapsed: %d\n",dist_elapsed);
     printf("Current fare: $%.3f\n",fare);
     printf("Distance remaining: %.0f\n",dist_remain);
-    
+    printf("Time elapsed: %d\n",time_elapsed);
     
 
 
