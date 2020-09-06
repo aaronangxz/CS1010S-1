@@ -29,5 +29,5 @@ bool transfer(int *from, int *to, int amount)
 
 int main(void) 
 {
-
+    
 }
