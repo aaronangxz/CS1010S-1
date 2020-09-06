@@ -19,7 +19,7 @@ printf("\ny is %d\n",y);
 int main(void) 
 {
 // int x = 1, y = 5; 
-// printf("x=%d, y=%d\n", x, y); 
+// printf("x=%d, y=%d\n", x, y); s
 // swap(&x, &y);
 // printf("x=%d, y=%d\n", x, y);
 int x = 9999;
