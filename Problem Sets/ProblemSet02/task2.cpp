@@ -8,7 +8,7 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     double base_fare = 3.40, fare = 0, surcharge = 0;
     char dayofweek[7][100] = {"Mon", "Tue","Wed","Thu","Fri","Sat","Sun"};
     int dist_count =0;
-    //Determin day of week base on int input
+    //Determine day of week base on int input
     if (weekday < 1 || weekday > 7)
     {
         printf("Invalid day!\n");

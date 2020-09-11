@@ -13,8 +13,8 @@ void swap(int*a, int*b)
 
 void sort(int *a, int *b, int *c) 
 {  
-   //Populate a, b, c into number[] as pointers
-   //*number[0] = {a}, *number[1] = {b}, *number[2] = {c}
+   //Assign a, b, c into number[] as pointers
+   //E.g. *number[0] = {a}, *number[1] = {b}, *number[2] = {c}
    int *number[] = {a, b, c};
    
    //Loop 1: to loop through all numbers
@@ -22,20 +22,19 @@ void sort(int *a, int *b, int *c)
    for (int i = 0; i < 3; i++)
    {
        //Loop 2: to swap numbers
-       //If there are 3 numbers, only have to loop 2 times
-       //Since only have to compare and swap 2 times 
-       //e.g. compare number[0] & number[1], compare number[1] & number[2]
+       //If there are 3 numbers, loop 2 times
+       //Since we only have to compare and swap 2 times 
+       //e.g. compare number[0] & number[1], then compare number[1] & number[2]
        for (int j = 1; j < 3; j++)
        {
-           //If *number[0] > *number[1], swap
-           //In order to move the smaller number to the front
+           //If *number[0] > *number[1], swap in order to move the smaller number to the front
            if (*number[j - 1] > *number[j])
            {
                swap(number[j - 1],number[j]);
            }
-           //Else go into j = 2, compare *number[1] & *number[2]
+           //Else, proceed to j + 1, compare *number[1] & *number[2]
        }
-       //Goes into i = 1 to check again
+       //Next, proceed to i + 1 to check again
    }
 }
 
