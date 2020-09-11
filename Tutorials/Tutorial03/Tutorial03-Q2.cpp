@@ -12,9 +12,9 @@ int print_10_to_b(int n, int b)
     while ( n != 0)
     {
         //Fill the ith location in array (Starts from 0) with remainder of n / base
-        //Essentially the last number of n        
+        //Essentially the last digit of n        
         convert[i] = n % b;
-        //Stripping off the last digit of n in every iteration
+        //Removing the last digit of n in every iteration
         n = n / b;
         i ++ ;
 
@@ -44,22 +44,22 @@ int print_10_to_b(int n, int b)
 
         */
     }
-    //Going back one position as the this position in array (empty) is not relevant
+    //Going back one position as this position in array --> convert[4] (empty) is not relevant
     // i = 4 - 1, so i goes back to 3 which is convert[3]
-    i --;
+    i--;
     
     //Start reverse looping from previous position of array (convert[3]), until i is < 0
-    for(  ; i >= 0; i--)
+    for( i = i ; i >= 0; i--)
     {
 	    printf("%d",convert[i]);
 
         /*
 
         ----- Start of loop -----
-        i = 3, prints 1
-        i = 2, prints 0
-        i = 1, prints 1
-        i = 0, prints 0
+        i = 3, return convert[3], prints 1
+        i = 2, return convert[2], prints 0
+        i = 1, return convert[1], prints 1
+        i = 0, return convert[0], prints 0
         ----- End of loop -----
 
         Result of print_10_to_b(130, 5) --> 1010
@@ -91,17 +91,17 @@ int print_b1_to_b2(int n, int b1, int b2)
 
         ----- Start of loop -----
         i = 0
-        130 % 10 = 0
+        remainder = 130 % 10 = 0
         n = 130 / 10 = 13
         sum = 0 * 5^0
 
         i = 1
-        13 % 10 = 3
+        remainder = 13 % 10 = 3
         N = 13 / 10 =1
         sum = 0 * 5^0 + 3 * 5^1
 
         i = 2
-        1 % 10 = 1
+        remainder = 1 % 10 = 1
         n = 1 / 10 = 0
         sum = 0 * 5^0 + 3 * 5^1+ 1 * 5^2
         ----- End of loop -----

@@ -8,7 +8,7 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     double base_fare = 3.40, fare = 0, surcharge = 0;
     char dayofweek[7][100] = {"Mon", "Tue","Wed","Thu","Fri","Sat","Sun"};
     int dist_count =0;
-    //Determine day of week base on int input
+    //Determine day of week base on int input---------------------------------------
     if (weekday < 1 || weekday > 7)
     {
         printf("Invalid day!\n");
@@ -23,7 +23,8 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         start_time_secs = 00;
         printf("Start: %s %d:%d\n",dayofweek[n],start_time_hours,start_time_mins);
     }
-    
+    //------------------------------------------------------------------------------
+
     /*
     if (distance <= 1000)
     {
@@ -65,7 +66,7 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     }
     */
 
-    //Compute surcharge base on start time
+    //Compute surcharge base on start time--------------------------------------
     if (weekday >= 1 && weekday <= 5 && start_time >= 360 && start_time <= 539)
     {
         surcharge = 1.25;
@@ -84,10 +85,12 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         surcharge = 1.0; // 0 surcharge
     }
     printf("The Surcharge is x %.3f\n",surcharge);
-
+    //-------------------------------------------------------------------------
+    
+    
     //When distance is less than & equals to 1000m
-   while (dist_count < distance)
-   {
+    while (dist_count < distance)
+    {
        dist_count += 500;
         if (dist_count <= 1000)
         {
@@ -95,9 +98,9 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         }
         else if (dist_count > 1000 && dist_count <= 10000)
         {
-            fare 
+            fare ;
         }
-   }
+    }
    
     
     
