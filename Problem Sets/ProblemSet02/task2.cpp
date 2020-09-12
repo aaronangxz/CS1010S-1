@@ -4,18 +4,18 @@
 double taxi_fare(int weekday, int start_time, int speed, int distance) 
 {
     printf("Distance: %d\n",distance);
-    int weekday_input, start_time_hours, start_time_mins, start_time_secs, total_dist = 0;
-    double basefare = 3.40, fare = 0, normalfare = 0.22, surcharge = 0; 
+    
+    int total_dist = 0, dist_count =0;
+    double basefare = 3.40, fare = 0, normalfare = 0.22;
     double speed_per_min = (60.0/speed) * 50;
     double current_time = (double)start_time;
     bool isweekday = false;
-    char dayofweek[7][100] = {"Mon", "Tue","Wed","Thu","Fri","Sat","Sun"};
-    int dist_count =0;
-    
-    //Determine day of week base on int input---------------------------------------
+
+    //Determine day of week base on int input, return true if it is weekday
     if (weekday < 1 || weekday > 7)
     {
         printf("Invalid day!\n");
+        return false;
     }
     else if (weekday >= 1 || weekday <= 5)
     {
@@ -25,88 +25,42 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     {
         isweekday = false;
     }
-        /*
-        weekday = weekday;
-        int n = weekday - 1;
-        //printf("%s ", dayofweek[n]);
-        start_time_hours = start_time / 60;
-        start_time_mins = (start_time - (start_time_hours * 60));
-        start_time_secs = 00;
-        printf("Start: %s %d:%d\n",dayofweek[n],start_time_hours,start_time_mins);
-        */
-    
-    
-    //------------------------------------------------------------------------------
 
-    /*
-    if (distance <= 1000)
-    {
-        base_fare = 3.40;
-    }
-    else if (distance > 1000 && distance <= 10000)
-    {
-        if ((distance - 1000) / 400 < 1)
-        {
-            base_fare = 3.40 + 0.22;
-        }
-        else
-        {    
-        while (distance > 1000)
-            {
-                distance -= 400;
-                fare += 0.22;
-                printf("Fare is : %f\n",fare);
-            } 
-            fare = fare + base_fare;
-        }
-    }
-    else if (distance > 10000)
-    {
-        if ((distance - 10000) / 350 < 1)
-        {
-            base_fare = 3.40 + 5.50 + 0.22;
-        }
-        else
-        {
-            while (distance > 10000)
-            {
-                distance -= 350;
-                fare += 0.22;
-                printf("Fare is : %f\n",fare);
-            } 
-            fare = fare + base_fare;
-        }
-    }
-    */
-
-    //Flag down fare / First 1000m --------------------------------------
+    //Flag down fare / First 1000m, base fare = $3.40 * surcharge
+    //Weekdays, between 06.00am & 08.59am
     if (isweekday && start_time >= 360 && start_time < 540)
     {
         fare += basefare * 1.25;
     }
+    //Any day, between 00.00am & 05.59am
     else if (start_time >= 0 && start_time < 360)
     {
         fare += basefare * 1.50;
     }
- 
+    //Any day, between 06.00pm & 11.59pm
     else if (start_time >= 1080 && start_time <= 1439)
     {
         fare += basefare * 1.25;
     }
+    //Normal hours, 0 surcharge
     else
     {
-        fare += basefare; // 0 surcharge
+        fare += basefare;
     }
-    printf("%f\n",fare);
+    //Decrement total distance to travel by 1000m, as $3.40 will cover the first 1000m
     distance -= 1000;
+    //Total distance travelled as of now
     total_dist += 1000;
+    //Current time after travelling 1000m
     current_time += (1000.0 / speed_per_min);
     //-------------------------------------------------------------------------    
+    
     //1000m to 10000m
-
+    //Loop continously 
+    //When there is remaining distance to travel AND
+    //When total distance travelled as of now is less than 10000m
     while ((distance > 0) && (total_dist < 10000))
     {
-        //fare+=69;
         if (isweekday && current_time >= 360 && current_time < 540)
         {
             fare += normalfare * 1.25;
@@ -121,16 +75,19 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         }
         else
         {
-            fare += normalfare; // 0 surcharge
+            fare += normalfare;
         }
+        //Decrement total distance to travel by blocks of 400m
         distance -= 400;
+        //Total distance travelled as of now, increment by blocks of 400m
         total_dist += 400;
+        //Increment current time after every 400m travelled
         current_time += (400.0 / speed_per_min);
         //current_time >= 1439? current_time -=1439 : current_time-=0; 
     }
 
     //Enter loop when distance > 10000
-    //Loop until distance is 0
+    //Loop continously until distance to travel is 0
     while (distance > 0)
     {
         if (isweekday && current_time  >= 360 && current_time < 540)
@@ -147,24 +104,26 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         }
         else
         {
-            fare += normalfare; // 0 surcharge
+            fare += normalfare;
         }
+        //Decrement total distance to travel by blocks of 350m
         distance -= 350;
+        //Total distance travelled as of now, increment by blocks of 350m
         total_dist += 350;
+        //Increment current time after every 350m travelled
         current_time += (350.0 / speed_per_min);
         //current_time >= 1439? current_time -=1439 : current_time-=0; 
     }
-    
-        printf("%f",fare);
-
     return fare;
 }
 
 int main(void) {
     // You may change the inputs to the function for testing
-    //double fare = taxi_fare(1, 17*60 + 59, 6, 1000);
-    double fare1 = taxi_fare(1, 5*60 + 50, 6, 15000);
-    //printf("\nThe taxi fare is: $%.3f", fare);
-    printf("\nThe taxi fare is: $%.3f", fare1);
+    double fare = taxi_fare(1, 17*60 + 59, 6, 1000);
+    printf("The taxi fare is: $%.3f\n", fare);
+    double fare1 = taxi_fare(1, 17*60+57, 6, 2000);
+    printf("The taxi fare is: $%.3f\n", fare1);
+    double fare2 = taxi_fare(1, 5*60 + 50, 6, 15000);
+    printf("The taxi fare is: $%.3f\n", fare2);
     return 0;
 }
