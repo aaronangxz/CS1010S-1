@@ -97,14 +97,16 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     {
         fare += basefare; // 0 surcharge
     }
+    printf("%f\n",fare);
     distance -= 1000;
     total_dist += 1000;
     current_time += (1000.0 / speed_per_min);
     //-------------------------------------------------------------------------    
     //1000m to 10000m
 
-    while ((total_dist > 0) && (total_dist < 10000))
+    while ((distance > 0) && (total_dist < 10000))
     {
+        //fare+=69;
         if (isweekday && current_time >= 360 && current_time < 540)
         {
             fare += normalfare * 1.25;
@@ -124,9 +126,11 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         distance -= 400;
         total_dist += 400;
         current_time += (400.0 / speed_per_min);
-        current_time >= 1439? current_time -=1439 : current_time-=0; 
+        //current_time >= 1439? current_time -=1439 : current_time-=0; 
     }
 
+    //Enter loop when distance > 10000
+    //Loop until distance is 0
     while (distance > 0)
     {
         if (isweekday && current_time  >= 360 && current_time < 540)
@@ -148,14 +152,10 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         distance -= 350;
         total_dist += 350;
         current_time += (350.0 / speed_per_min);
-        current_time >= 1439? current_time -=1439 : current_time-=0; 
-
-        
+        //current_time >= 1439? current_time -=1439 : current_time-=0; 
     }
     
-
-    //
-
+        printf("%f",fare);
 
     return fare;
 }
@@ -163,9 +163,8 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
 int main(void) {
     // You may change the inputs to the function for testing
     //double fare = taxi_fare(1, 17*60 + 59, 6, 1000);
-    double fare1 = taxi_fare(6, 5*60 + 50, 6, 15000);
+    double fare1 = taxi_fare(1, 5*60 + 50, 6, 15000);
     //printf("\nThe taxi fare is: $%.3f", fare);
     printf("\nThe taxi fare is: $%.3f", fare1);
     return 0;
-
 }
