@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 
+
 double taxi_fare(int weekday, int start_time, int speed, int distance) 
 {
     printf("Distance: %d\n",distance);
-
+    int remainingDistance = distance;
     int total_dist = 0, dist_count =0;
     double basefare = 3.40, fare = 0, normalfare = 0.22;
     double speed_per_min = (60.0/speed) * 50;
@@ -14,7 +15,7 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     //Determine day of week base on int input
     if (weekday < 1 || weekday > 7 || start_time < 0 || start_time > 1439 || speed < 0 || distance < 0)
     {
-        printf("Invalid input!\n");
+        printf("Invalid day!\n");
         return false;
     }
     
@@ -29,17 +30,17 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
 
     //Flag down fare / First 1000m, base fare = $3.40 * surcharge
     //Weekdays, between 06.00am & 08.59am
-    if (isweekday && start_time >= 360 && start_time < 540)
+    if (isweekday && current_time >= 360 && current_time < 540)
     {
         fare += basefare * 1.25;
     }
     //Any day, between 00.00am & 05.59am
-    else if (start_time >= 0 && start_time < 360)
+    else if (current_time >= 0 && current_time < 360)
     {
         fare += basefare * 1.50;
     }
     //Any day, between 06.00pm & 11.59pm
-    else if (start_time >= 1080 && start_time < 1440)
+    else if (current_time >= 1080 && current_time < 1440)
     {
         fare += basefare * 1.25;
     }
@@ -49,7 +50,7 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         fare += basefare;
     }
     //Decrement total distance to travel by 1000m, as $3.40 will cover the first 1000m
-    distance -= 1000;
+    remainingDistance -= 1000;
     //Total distance travelled as of now
     total_dist += 1000;
     //Current time after travelling 1000m
@@ -69,9 +70,9 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
     //Loop continously 
     //When there is remaining distance to travel AND
     //When total distance travelled as of now is less than 10000m
-    while ((distance > 0) && (total_dist < 10000))
+    while ((remainingDistance > 0) && (total_dist < 10000))
     {
-        if (weekday >= 1 && weekday <= 5)
+        if (weekday <= 5)
         {
             isweekday = true;
         }
@@ -80,25 +81,31 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
             isweekday = false;
         }
         
-        if (isweekday && current_time >= 360 && current_time < 540)
-        {
-            fare += normalfare * 1.25;
-        }
-        else if (current_time  >= 0 && current_time  < 360)
+        //0am to 5.59am
+        if (current_time  >= 0 && current_time  < 360)
         {
             fare += normalfare * 1.50;
         }
+        //6pm to 11.59pm
         else if (current_time  >= 1080 && current_time  < 1440)
         {
             fare += normalfare * 1.25;  
         }
+        //6am to 5.59pm
         else
         {
-            fare += normalfare;
+            if (isweekday && current_time >= 360 && current_time < 540)
+            {
+                fare += normalfare * 1.25;
+            }
+            else
+            {
+                fare += normalfare;    
+            }
         }
-
+        
         //Decrement total distance to travel by blocks of 400m
-        distance -= 400;
+        remainingDistance -= 400;
         //Total distance travelled as of now, increment by blocks of 400m
         total_dist += 400;
         //Increment current time after every 400m travelled
@@ -115,12 +122,12 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
             }
         }
     }
-    //-----------------------------------------------------------------------
+
     //Enter loop when distance > 10000
-    //Loop continously until distance to travel is less than 0
-    while (distance > 0)
+    //Loop continously until remaining distance is less than 0
+    while (remainingDistance > 0)
     {
-        if (weekday >= 1 && weekday <= 5)
+        if (weekday <= 5)
         {
             isweekday = true;
         }
@@ -129,24 +136,30 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
             isweekday = false;
         }
         
-        if (isweekday && current_time  >= 360 && current_time < 540)
-        {
-            fare += normalfare * 1.25;
-        }
-        else if (current_time  >= 0 && current_time  < 360)
+        //0am to 5.59am
+        if (current_time  >= 0 && current_time  < 360)
         {
             fare += normalfare * 1.50;
         }
+        //6pm to 11.59pm
         else if (current_time  >= 1080 && current_time  < 1440)
         {
-            fare += normalfare * 1.25;
+            fare += normalfare * 1.25;  
         }
+        //6am to 5.59pm
         else
         {
-            fare += normalfare;
+            if (isweekday && current_time >= 360 && current_time < 540)
+            {
+                fare += normalfare * 1.25;
+            }
+            else
+            {
+                fare += normalfare;    
+            }
         }
         //Decrement total distance to travel by blocks of 350m
-        distance -= 350;
+        remainingDistance -= 350;
         //Total distance travelled as of now, increment by blocks of 350m
         total_dist += 350;
         //Increment current time after every 350m travelled
@@ -164,6 +177,8 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         }
     }
     return fare;
+
+    
 }
 
 int main(void) {
