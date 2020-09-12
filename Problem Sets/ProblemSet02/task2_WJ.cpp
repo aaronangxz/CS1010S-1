@@ -18,7 +18,6 @@ double taxi_fare(int weekday, int start_time, int speed, int distance)
         printf("Invalid day!\n");
         return false;
     }
-    
     if (weekday <= 5)
     {
         isweekday = true;
