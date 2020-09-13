@@ -3,6 +3,9 @@
 
 double taxi_fare(int weekday, int start_time, int speed, int distance) 
 {
+    printf("Weekday: %d\n",weekday);
+    printf("Start Time: %d\n",start_time);
+    printf("Speed: %d\n",speed);
     printf("Distance: %d\n",distance);
 
     int total_dist = 0, dist_count =0;
