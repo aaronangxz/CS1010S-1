@@ -5,24 +5,61 @@ using namespace std;
 /********************
  * Q1A
  * *****************/
-bool contains_digit(int n, int d) {
-
+bool contains_digit(int n, int d) 
+{
+    int digit;
+    while (n != 0)
+    {
+        digit = n % 10;
+        n = n /10;
+        if (digit == d)
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 
 /********************
  * Q1B
  * *****************/
-void play(int start, int stop, int d) {
-
+void play(int start, int stop, int d) 
+{
+    for (int i = start; i <= stop ; i++)
+    {
+        if (contains_digit(i,d) && (i % d == 0))
+        {
+            cout << "Double-Up" << endl;
+        }
+        else if (contains_digit(i,d) || (i % d == 0))
+        {
+            cout << d << "-Up" << endl;
+        }
+        else
+        {
+            cout << i << endl;
+        }
+    }
 }
 
 
 /********************
  * Q1C: Bonus
  * *****************/
-bool contains_double(int n) {
-
+bool contains_double(int n) 
+{
+    int digits;
+    while (n != 0)
+    {
+        digits = n % 10;
+        n /= 10;
+        if (digits == n % 10)
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 
