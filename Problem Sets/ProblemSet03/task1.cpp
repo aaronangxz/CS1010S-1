@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 /*************************
@@ -25,14 +25,14 @@ int factorial(int n)
     
 }
 
-long factoriallong(int n) 
+unsigned long factoriallong(int n) 
 {
-    long factorial = 1;
+    unsigned long factorial = 1;
     for (int i = 1; i <= n; i++)
     {
         factorial *= i;
     }
-   // cout << "Factorial: " << factorial << endl;
+   //cout << "Factorial: " << factorial << endl;
     return factorial;
 }
 
@@ -47,11 +47,26 @@ When n >= 13, value of n! will be out of int's scope.
 
 
 // c.
-int choose(int n, int k) 
+unsigned long choose(int n, int k) 
 {
+    long fact = 1;
+    unsigned long choose ;
+    if (k <= n/2)
+    {
+        for (int i = n-k+1; i <= n ; i++)
+        {
+            fact *= i; 
+        }
+    }
+    else
+    {
+        for (int i = (n-k+1) + (n/2); i <= n ; i++)
+        {
+            fact *= i; 
+        }
+    }
     
-    
-    int choose = factoriallong(n) / (factoriallong(k) * factoriallong(n-k));
+    choose = fact / factoriallong(k);
     return choose;
 }
 
@@ -60,7 +75,7 @@ int choose(int n, int k)
 Are you able to make use of the factorial function in choose? Explain why.
 (Put your answer within the comments)
 Answer: 
-Yes, as n choose k = n! / (k!(n-k)!)
+No, as n choose k = n! / (k!(n-k)!)
 
 */
 
@@ -68,11 +83,11 @@ Yes, as n choose k = n! / (k!(n-k)!)
 // e. 
 void pascal_triangle(int row) 
 {
-    int digits = row  ;
+    int digits = row ;
     for ( int i = 0; i <= digits; i++)
     {
-        int number = choose(row,i);
-        cout << number << " ";
+        unsigned long number = choose(row,i);
+        printf("%lu ",number);
     }
     // for ( int i = digits + 1; i >= 0; i--)
     // {
@@ -84,5 +99,5 @@ void pascal_triangle(int row)
 
 int main (void)
 {
-    pascal_triangle(15); 
+    pascal_triangle(22); 
 }
