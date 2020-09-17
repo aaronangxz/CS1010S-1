@@ -1,3 +1,5 @@
+//Write a function max that takes in an array of int and its size, and returns the maximum value found in the array.
+
 #include <math.h>
 #include <stdio.h>
 
