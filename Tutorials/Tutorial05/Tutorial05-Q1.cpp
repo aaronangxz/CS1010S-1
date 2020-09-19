@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+ 
 void printArray(int list[], int numElem);
 void passElement(int num);
 void changeElements(int list[]);
