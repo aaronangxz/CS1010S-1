@@ -11,7 +11,6 @@ the questions in this task.   */
 
 #include <stdio.h>
 
-
 // a.
 int factorial(int n) 
 {
@@ -22,7 +21,6 @@ int factorial(int n)
     }
    // cout << "Factorial: " << factorial << endl;
     return factorial;
-    
 }
 
 unsigned long factoriallong(int n) 
@@ -49,7 +47,7 @@ When n >= 13, value of n! will be out of int's scope.
 // c.
 unsigned long choose(int n, int k) 
 {
-    long fact = 1;
+    unsigned long fact = 1;
     unsigned long choose ;
     if (k <= n/2)
     {
@@ -65,7 +63,6 @@ unsigned long choose(int n, int k)
             fact *= i; 
         }
     }
-    
     choose = fact / factoriallong(k);
     return choose;
 }
@@ -94,10 +91,9 @@ void pascal_triangle(int row)
     //     int number = choose(row,i);
     //     cout << number << " ";
     // }
-    
 }
 
 int main (void)
 {
-    pascal_triangle(29); 
+    pascal_triangle(20); 
 }
