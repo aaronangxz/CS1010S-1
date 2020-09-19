@@ -99,5 +99,5 @@ void pascal_triangle(int row)
 
 int main (void)
 {
-    pascal_triangle(22); 
+    pascal_triangle(29); 
 }
