@@ -35,3 +35,7 @@ This module aims to <br>
 1. Practice on Basic C Expressions<br>
 2. Practice on Branching<br>
 3. Practice on Looping
+
+**Practical Exam**<br>
+1. AY17/18 Practical Exam 1<br>
+2. AY18/19 Practical Exam 1<br>
