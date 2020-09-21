@@ -10,12 +10,16 @@ This module aims to <br>
 1. Basics of C<br>
 2. Branching & Looping<br>
 3. All about Computers<br>
-3. Functional Abstraction and Pointers<br>
+4. Functional Abstraction and Pointers<br>
+5. Compilation & Data<br>
+6. Strings and Arrays<br>
 
 **Tutorial**<br>
 1. Tutorial 1<br>
 2. Tutorial 2<br>
 3. Tutorial 3<br>
+4. Tutorial 4<br>
+5. Tutorial 5<br>
 
 **Lab**<br>
 1. Lab 0<br>

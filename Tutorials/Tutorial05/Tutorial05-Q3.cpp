@@ -35,21 +35,23 @@ int main(void)
     int cells[]={0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0};
     //game_of_life({0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 15, 9);
     
-    /*
-    Testing ONLY! print of X _
-    for (int i = 0; i < 15; i++)
+    for (int i = 0; i < 9; i++)
     {
-        if (cells[i] == 1)
+        for (int i = 0; i < 15; i++)
         {
-            //print_cells('X');
-            printf("X");
+            if (cells[i-1] == 1 || cells[i+1] == 1)
+            {
+                //print_cells('X');
+                printf("X");
+            }
+            else
+            {
+                //print_cells('_');
+            printf("_");
+            }
         }
-        else
-        {
-            //print_cells('_');
-        printf("_");
-        }
-        
     }
-    */
+    
+    
+    
 }
