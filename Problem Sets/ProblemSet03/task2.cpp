@@ -7,6 +7,7 @@ the questions in this task.   */
 
 #include <stdio.h>
 #include<iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -56,56 +57,64 @@ int days_in_month(int month, int year)
 int days_from_epoch(int day, int month, int year) 
 {
     int daysum = 0;
-
+    //Calculate total days since 01/01/01
     for (int i = 1; i < year; i++)
     {
+        //Plus 366 if it's leap year, 365 otherwise
         if (is_leap_year(i))
         {
             daysum += 366;
-            //cout << "Year " << i <<" is leap year" << endl;
         }
         else
         {
             daysum += 365;
-            //cout << "Year " << i <<" is not leap year" << endl;
         }
     }
-    //cout << "Current Day (Year): " << daysum << endl;
 
+    //If it is January, only add in the day, since it is not necessary to add the whole month
     if (month == 1)
     {
         daysum += day;
     }
     else
     {
+        //Add (month-1) * days
         for (int i = 1; i < month ; i++)
         {
             daysum += days_in_month(i, year); 
         }
+        //Add in the remaining days
         daysum += day;
     }
-    //cout << "2. Current Day: " << daysum << endl;
-    
+    //Minus the day of Epoch since 01/01/01
     daysum -= 719163;
     return daysum;
 }
 
 
 // d.
-int day_of_week(int day, int month, int year) {
+int day_of_week(int day, int month, int year) 
+{
     //Compute number of days since Epoch
     int days = days_from_epoch(day,month,year);
+    //Minus the day '0' when days from Epoch is negative
+    if (days < 0)
+    {
+        days = abs(days) -1 ;
+    }
+    
     //Initialize array:
     //Since Epoch is Thursday, if days % 7 is 0, it is Thursday
     //Hence day_week[0] is Thursday
-    int day_week[7] = {4,5,6,7,1,2,3};
-   
-    for (int i = 0; i < 7; i++)
+    //int day_week[7] = {4,5,6,7,1,2,3};
+   int day_week[7] = {4,5,6,0,1,2,3};
+    for (int i = 0; i <= 7; i++)
     {
         if (days % 7 == i)
         {
             return day_week[i];
         }
+        printf("Day is %d\n",day_week[i]);
     }
 }    
 
@@ -117,7 +126,8 @@ void display_month(int month, int year) {
     int days = days_in_month(month,year);
     //Compute week of first day
     int week = day_of_week(1,month,year);
-    
+    cout << "Week is "<< week << endl;
+
     //Fill in spaces until the first day of the month
     int space_for_firstday;
     for (space_for_firstday = 0; space_for_firstday < week; space_for_firstday++)
@@ -126,25 +136,41 @@ void display_month(int month, int year) {
     }
     
     //Starts to print from first day onwards
-    for (int print_days = 1; print_days <= days; print_days++) { 
-            printf("%3d", print_days); 
-            //When day exceeds the left most (Saturday), resets to Sunday and add in new line
-            if (++space_for_firstday > 6) { 
-                space_for_firstday = 0; 
-                printf("\n"); 
-            } 
+    for (int print_days = 1; print_days <= days; print_days++) 
+    { 
+        printf("%3d", print_days); 
+        //When day exceeds the right most (Saturday), resets to Sunday and add in new line
+        if (++space_for_firstday > 6) 
+        { 
+            space_for_firstday = 0; 
+            cout << endl; 
         } 
+    } 
 }
 
 int main(void)
 {
-    // bool test = is_leap_year(2100);
-    // cout << "Leap year? " << test << endl;
-    // int test1 = days_in_month(2,2000);
-    // cout << "There are " << test1 << " days." << endl;
-    // int test2 = days_from_epoch(10, 1, 1970)	;
-    // cout << "Epoch: " << test2 << endl;
-    // int test3 = day_of_week(1, 1, 1970)	;
-    // cout << "Day of week: " << test3 << endl;
-
+    bool test = is_leap_year(2012);
+    cout << "Leap year? " << test << endl;
+    bool test2 = is_leap_year(2100);
+    cout << "Leap year? " << test2 << endl;
+    bool test3 = is_leap_year(2017);
+    cout << "Leap year? " << test3 << endl;
+    int test4 = days_in_month(9, 2017);
+    cout << "There are " << test4 << " days." << endl;
+    int test5 = days_in_month(2,2000);
+    cout << "There are " << test5 << " days." << endl;
+    int test6 = days_from_epoch(10, 1, 1970);
+    cout << "Days from Epoch: " << test2 << endl;
+    int test7 = days_from_epoch(7, 9, 2017);
+    cout << "Days from Epoch: " << test7 << endl;
+    int test8 = days_from_epoch(9, 8, 1965);
+    cout << "Days from Epoch: " << test8 << endl;
+    int test9 = day_of_week(1, 1, 1970)	;
+    cout << "Day of week: " << test9 << endl;
+    int test10 = day_of_week(9, 9, 2017);
+    cout << "Day of week: " << test10 << endl;
+    display_month(9, 2017);
+    cout << endl;
+    display_month(0,1970);
 }
