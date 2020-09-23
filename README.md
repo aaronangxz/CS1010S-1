@@ -1,5 +1,8 @@
 # CS1010S-1 / TIC1001
 
+![Image of MEME]
+(https://www.dropbox.com/s/yxf59c79wjq6xfl/Programming-Memes-Programmer-while-sleeping.jpg)
+
 This module aims to <br> 
 (i) expose students to computing principles (including abstraction and composition), <br>
 (ii) provide a broad introduction to key computing concepts (including computer organisation, operating systems, data management, distributed applications), and <br>
