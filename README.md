@@ -41,3 +41,10 @@ This module aims to <br>
 **Practical Exam**<br>
 1. AY17/18 Practical Exam 1<br>
 2. AY18/19 Practical Exam 1<br>
+3. AY19/20 Practical Exam 1<br>
+
+**Test Dates**<br>
+Dates | Test
+------------ | -------------
+Midterm Test | 01 Oct 2020 7pm
+Practical Exam 1 | 03 Oct 2020 10pm
