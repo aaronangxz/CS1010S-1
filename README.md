@@ -47,4 +47,4 @@ This module aims to <br>
 Dates | Test
 ------------ | -------------
 Midterm Test | 01 Oct 2020 7pm
-Practical Exam 1 | 03 Oct 2020 10pm
+Practical Exam 1 | 03 Oct 2020 10am
