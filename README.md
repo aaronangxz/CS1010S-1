@@ -1,7 +1,7 @@
 # CS1010S-1 / TIC1001
 
 ![Image of MEME]
-(https://www.dropbox.com/s/yxf59c79wjq6xfl/Programming-Memes-Programmer-while-sleeping.jpg)
+(https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Programmer-while-sleeping.jpg?x80061)
 
 This module aims to <br> 
 (i) expose students to computing principles (including abstraction and composition), <br>
