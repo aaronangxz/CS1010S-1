@@ -22,13 +22,10 @@ void game_of_life(bool cells[], int size, int num_gen)
     
 }
 
-
-
 void next_gen (int cells)
 {
 
 }
-
 
 int main(void) 
 {
