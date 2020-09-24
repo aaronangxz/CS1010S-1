@@ -1,5 +1,5 @@
-<img src="http://www.nus.edu.sg/images/default-source/identity-images/NUS_logo_full-vertical.jpg" alt="NUS" width="500"/>
-<centre># CS1010S-1 / TIC1001</centre>
+<center><img src="http://www.nus.edu.sg/images/default-source/identity-images/NUS_logo_full-vertical.jpg" alt="NUS" width="100"/></center>
+<center><h1>CS1010S-1 / TIC1001</h1></center>
 
 ![Image of MEME](https://lh3.googleusercontent.com/proxy/h1opYXQOmtcefsMdhAFCoJ_O-PYikoED8bC4RFZ0naSGLHb5Cc2k9li4yLHM9C6fnutcKi8QkkDmgcBk2FNCuOAlNGlCHoLpyhr_NJnUwErmd0PxoOb1FCEFQAgKCZjQ-0FXC8y2z3RSguIUBkv7aU1ppKPnuZk8fMA)
 
