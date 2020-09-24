@@ -1,4 +1,4 @@
-![Image of NUS](https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.nus.edu.sg%2Fidentity%2Fguidelines%2Flogo-colour-and-background&psig=AOvVaw2HYAtCsNeYuJPLN3Ga3pNW&ust=1601059446690000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODwv8e5guwCFQAAAAAdAAAAABAT)
+![Image of NUS](http://www.nus.edu.sg/images/default-source/identity-images/NUS_logo_full-vertical.jpg)
 
 <centre># CS1010S-1 / TIC1001</centre>
 
