@@ -1,4 +1,4 @@
-<center>TIC1001—Introduction to Computing and Programming</center>
+<center>TIC1001—Introduction to Computing and Programming</center><br>
 <center>National University of Singapore</center>
 
 <center><h1>Midterm Test - AY19/20</h1></center>
@@ -35,12 +35,12 @@ double f(int x, double y)
 
 Initialize x = 10, y = 2.7
 
-Call f(x,y) -> f(10,2.7)
-x = (int)(10/2.7) = (int)3.7 = 3
+Call <code>f(x,y)</code> -> f(10,2.7)<br>
+x = (int)(10/2.7) = (int)3.7 = 3<br>
 return 3 * 2.7 = 8.1
 
-Call f(x,y) -> f(8.1,2.7)
-x = (int)(8/2.7) = (int)2.96 = 2
+Call <code>f(x,y)</code> -> f(8.1,2.7)<br>
+x = (int)(8/2.7) = (int)2.96 = 2<br>
 return 2 * 2.7 = 5.4
 
 Ans: 5.4
@@ -66,20 +66,19 @@ else
 
 Initialize a = 42
 
-42 % 7 = 0, so will not pass *if(a%7)*
+42 % 7 = 0, so will not pass <code>if(a % 7)</code><br>
 
-Since there are no braces, a/=7 -> 42/7 = 6
+Since there are no braces, a/=7 -> 42/7 = 6<br>
 
-6 < 7, so will pass *if(a<7)*
+6 < 7, so will pass <code>if(a7 < 7)</code><br>
 
-Print "of"
+Print "of"<br>
 
-a = 6, so will pass *if(a)* ***Boolean true as long as != 0**
+a = 6, so will pass <code>if(a)</code> ***Boolean true as long as != 0**<br>
 
-Print "both"
+Print "both"<br>
 
 Ans: of both
-
 
 C.
 
