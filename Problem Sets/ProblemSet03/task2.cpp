@@ -97,37 +97,58 @@ int day_of_week(int day, int month, int year)
 {
     //Compute number of days since Epoch
     int days = days_from_epoch(day,month,year);
+    cout << "Days (epoch) is " << days << endl;
     //Minus the day '0' when days from Epoch is negative
     if (days < 0)
     {
-        days = abs(days) -1 ;
+        days = abs(days) ; 
+        cout << "Days (abs) is " << days << endl;
+        int day_week[7] = {4,3,2,1,0,6,5};
+        for (int i = 6; i >= 0; i--)
+        {
+            // if (--i > 6)
+            // {
+            //     i =6;
+            // }
+            if (days % 7 == i)
+            {
+                
+                return day_week[i];
+                
+            }
+            printf("Day is %d\n",day_week[i]);
+        }
     }
     
     //Initialize array:
     //Since Epoch is Thursday, if days % 7 is 0, it is Thursday
     //Hence day_week[0] is Thursday
     //int day_week[7] = {4,5,6,7,1,2,3};
-   int day_week[7] = {4,5,6,0,1,2,3};
-    for (int i = 0; i <= 7; i++)
+    else
     {
-        if (days % 7 == i)
+        int day_week[7] = {4,5,6,0,1,2,3};
+        for (int i = 0; i <= 7; i++)
         {
-            return day_week[i];
+            if (days % 7 == i)
+            {
+                return day_week[i];
+            }
+            printf("Day is %d\n",day_week[i]);
         }
-        printf("Day is %d\n",day_week[i]);
     }
 }    
 
 // e. 
 void display_month(int month, int year) {
-    //Week header
-    cout << "  S  M  T  W  T  F  S" << endl;
+    
     //Compute total days in the month
     int days = days_in_month(month,year);
     //Compute week of first day
     int week = day_of_week(1,month,year);
-    cout << "Week is "<< week << endl;
+    cout << "Week of 1st is "<< week << endl;
 
+    //Week header
+    cout << "  S  M  T  W  T  F  S" << endl;
     //Fill in spaces until the first day of the month
     int space_for_firstday;
     for (space_for_firstday = 0; space_for_firstday < week; space_for_firstday++)
@@ -150,27 +171,32 @@ void display_month(int month, int year) {
 
 int main(void)
 {
-    bool test = is_leap_year(2012);
-    cout << "Leap year? " << test << endl;
-    bool test2 = is_leap_year(2100);
-    cout << "Leap year? " << test2 << endl;
-    bool test3 = is_leap_year(2017);
-    cout << "Leap year? " << test3 << endl;
-    int test4 = days_in_month(9, 2017);
-    cout << "There are " << test4 << " days." << endl;
-    int test5 = days_in_month(2,2000);
-    cout << "There are " << test5 << " days." << endl;
-    int test6 = days_from_epoch(10, 1, 1970);
-    cout << "Days from Epoch: " << test2 << endl;
-    int test7 = days_from_epoch(7, 9, 2017);
-    cout << "Days from Epoch: " << test7 << endl;
-    int test8 = days_from_epoch(9, 8, 1965);
+    // bool test = is_leap_year(2012);
+    // cout << "Leap year? " << test << endl;
+    // bool test2 = is_leap_year(2100);
+    // cout << "Leap year? " << test2 << endl;
+    // bool test3 = is_leap_year(2017);
+    // cout << "Leap year? " << test3 << endl;
+    // int test4 = days_in_month(9, 2017);
+    // cout << "There are " << test4 << " days." << endl;
+    // int test5 = days_in_month(2,2000);
+    // cout << "There are " << test5 << " days." << endl;
+    // int test6 = days_from_epoch(10, 1, 1970);
+    // cout << "Days from Epoch: " << test2 << endl;
+    // int test7 = days_from_epoch(7, 9, 2017);
+    // cout << "Days from Epoch: " << test7 << endl;
+    int test8 = days_from_epoch(25, 12, 1969);
     cout << "Days from Epoch: " << test8 << endl;
-    int test9 = day_of_week(1, 1, 1970)	;
+    int test9 = day_of_week(25, 12, 1969);
     cout << "Day of week: " << test9 << endl;
-    int test10 = day_of_week(9, 9, 2017);
-    cout << "Day of week: " << test10 << endl;
-    display_month(9, 2017);
-    cout << endl;
-    display_month(0,1970);
+    // int test10 = day_of_week(9, 9, 2017);
+    // cout << "Day of week: " << test10 << endl;
+    // display_month(9, 2017);
+    // cout << endl;
+    //display_month(12,1969);
 }
+
+
+//Problem:
+
+//1969 calender is wrong
