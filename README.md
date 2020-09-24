@@ -1,4 +1,6 @@
-# CS1010S-1 / TIC1001
+![Image of NUS](https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.nus.edu.sg%2Fidentity%2Fguidelines%2Flogo-colour-and-background&psig=AOvVaw2HYAtCsNeYuJPLN3Ga3pNW&ust=1601059446690000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODwv8e5guwCFQAAAAAdAAAAABAT)
+
+<centre># CS1010S-1 / TIC1001</centre>
 
 ![Image of MEME](https://lh3.googleusercontent.com/proxy/h1opYXQOmtcefsMdhAFCoJ_O-PYikoED8bC4RFZ0naSGLHb5Cc2k9li4yLHM9C6fnutcKi8QkkDmgcBk2FNCuOAlNGlCHoLpyhr_NJnUwErmd0PxoOb1FCEFQAgKCZjQ-0FXC8y2z3RSguIUBkv7aU1ppKPnuZk8fMA)
 
