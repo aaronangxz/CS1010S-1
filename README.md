@@ -1,4 +1,4 @@
-![Image of NUS](http://www.nus.edu.sg/images/default-source/identity-images/NUS_logo_full-vertical.jpg)
+![Image of NUS](http://www.nus.edu.sg/images/default-source/identity-images/NUS_logo_full-vertical.jpg =500x)
 
 <centre># CS1010S-1 / TIC1001</centre>
 
