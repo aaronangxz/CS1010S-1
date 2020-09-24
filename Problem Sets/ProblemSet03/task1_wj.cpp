@@ -45,23 +45,31 @@ When n >= 13, value of n! will be out of int's scope.
 // c.
 int choose(int n, int k) 
 {
+    int choose = factoriallong(n) / (factoriallong(k) * factoriallong(n-k));
+    return choose;
+}
+
+int choose_alt(int n, int k) 
+{
+    //Because nCk = n! / k!(n-k)! = n! / k!r!
     int r = n - k;
     double fact = 1;
     int output = 0;
     // printf("n is %d, k is %d, r is %d, \n", n, k, r);
 
+    //
     for (int i = n; i >=1 ; i--)
     {
-        double a=1.0, b=1.0, c = 1.0;
+        double a = 1.0, b = 1.0, c = 1.0;
         if (n >= i) a = i;
         if (k >= i) b = i;
         if (r >= i) c = i;
         //printf("fact is %lu, a is %d, b is %d, c is %d \n", fact, a, b, c);
-        //printf("%f *= %f / (%f * %f)\n", fact, a, b, c);
+        printf("%f *= %f / (%f * %f)\n", fact, a, b, c);
         fact *= a / (b * c);
     }
     output = fact;
-    //printf("%dC%d = %lu" ,n , k, output);
+    //printf("%dC%d = %d" ,n , k, output);
     return output;
 }
 
@@ -69,26 +77,27 @@ int choose(int n, int k)
 Are you able to make use of the factorial function in choose? Explain why.
 (Put your answer within the comments)
 Answer: 
-No, as n choose k = n! / (k!(n-k)!)
+No, as n choose k = n! / (k!(n-k)!) will return an excessively large number which exceeds the scope of integer.
 */
 
 // e. 
 void pascal_triangle(int row) 
 {
     int digits = row ;
-    for ( int i = 0; i <= digits; i++)
+    for (int i = 0; i <= digits; i++)
     {
-        unsigned long number = choose(row,i);
+        unsigned long number = choose_alt(row,i);
         printf("%lu ",number);
     }
-    // for ( int i = digits + 1; i >= 0; i--)
-    // {
-    //     int number = choose(row,i);
-    //     cout << number << " ";
-    // }
 }
 
 int main (void)
 {
-    pascal_triangle(100); 
+    // int testcase1 = factorial(5);
+    // cout << "Test Case 1 : " << testcase1 << endl;
+    // int testcase2 = choose(8,5);
+    // cout << "Test Case 2 : " << testcase2 << endl;
+    // int testcase3 = choose(13, 2);
+    // cout << "Test Case 3 : " << testcase3 << endl;
+    pascal_triangle(15); 
 }
