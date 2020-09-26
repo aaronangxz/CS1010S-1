@@ -91,14 +91,14 @@ int days_from_epoch(int day, int month, int year)
     return daysum;
 }
 
-
 // d.
 int day_of_week(int day, int month, int year) 
 {
     //Compute number of days since Epoch
     int days = days_from_epoch(day,month,year);
     cout << "Days (epoch) is " << days << endl;
-    //Minus the day '0' when days from Epoch is negative
+    //If results for epoch is negative, we have to obtain the day of week backwards from 01/01/1970
+    //Since 01/01/1970 is 4, 1 day lesser than Epoch is 3, etc.
     if (days < 0)
     {
         days = abs(days) ; 
@@ -106,15 +106,9 @@ int day_of_week(int day, int month, int year)
         int day_week[7] = {4,3,2,1,0,6,5};
         for (int i = 6; i >= 0; i--)
         {
-            // if (--i > 6)
-            // {
-            //     i =6;
-            // }
             if (days % 7 == i)
             {
-                
                 return day_week[i];
-                
             }
             printf("Day is %d\n",day_week[i]);
         }
@@ -146,7 +140,6 @@ void display_month(int month, int year) {
     //Compute week of first day
     int week = day_of_week(1,month,year);
     cout << "Week of 1st is "<< week << endl;
-
     //Week header
     cout << "  S  M  T  W  T  F  S" << endl;
     //Fill in spaces until the first day of the month
@@ -171,29 +164,29 @@ void display_month(int month, int year) {
 
 int main(void)
 {
-    // bool test = is_leap_year(2012);
-    // cout << "Leap year? " << test << endl;
-    // bool test2 = is_leap_year(2100);
-    // cout << "Leap year? " << test2 << endl;
-    // bool test3 = is_leap_year(2017);
-    // cout << "Leap year? " << test3 << endl;
-    // int test4 = days_in_month(9, 2017);
-    // cout << "There are " << test4 << " days." << endl;
-    // int test5 = days_in_month(2,2000);
-    // cout << "There are " << test5 << " days." << endl;
-    // int test6 = days_from_epoch(10, 1, 1970);
-    // cout << "Days from Epoch: " << test2 << endl;
-    // int test7 = days_from_epoch(7, 9, 2017);
-    // cout << "Days from Epoch: " << test7 << endl;
+    bool test = is_leap_year(2012);
+    cout << "Leap year? " << test << endl;
+    bool test2 = is_leap_year(2100);
+    cout << "Leap year? " << test2 << endl;
+    bool test3 = is_leap_year(2017);
+    cout << "Leap year? " << test3 << endl;
+    int test4 = days_in_month(9, 2017);
+    cout << "There are " << test4 << " days." << endl;
+    int test5 = days_in_month(2,2000);
+    cout << "There are " << test5 << " days." << endl;
+    int test6 = days_from_epoch(10, 1, 1970);
+    cout << "Days from Epoch: " << test2 << endl;
+    int test7 = days_from_epoch(7, 9, 2017);
+    cout << "Days from Epoch: " << test7 << endl;
     int test8 = days_from_epoch(25, 12, 1969);
     cout << "Days from Epoch: " << test8 << endl;
     int test9 = day_of_week(25, 12, 1969);
     cout << "Day of week: " << test9 << endl;
-    // int test10 = day_of_week(9, 9, 2017);
-    // cout << "Day of week: " << test10 << endl;
-    // display_month(9, 2017);
-    // cout << endl;
-    //display_month(12,1969);
+    int test10 = day_of_week(9, 9, 2017);
+    cout << "Day of week: " << test10 << endl;
+    display_month(9, 2017);
+    cout << endl;
+    display_month(12,1969);
 }
 
 
