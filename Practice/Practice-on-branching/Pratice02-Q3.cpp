@@ -3,9 +3,9 @@
 
 bool is_vowel(char c) {
     int vowel;
-    char a = 'a', A = 'A', e = 'e', E = 'E', i = 'i', I = 'I', o = 'o', O = 'O', u = 'u', U = 'U';
+    //char a = 'a', A = 'A', e = 'e', E = 'E', i = 'i', I = 'I', o = 'o', O = 'O', u = 'u', U = 'U';
     
-    if (c == a | c == A | c == e | c == E | c == i | c == I | c == o | c == O | c == u | c == U)
+    if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U')
     {
         vowel = 1;
     }

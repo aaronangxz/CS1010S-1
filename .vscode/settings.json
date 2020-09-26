@@ -8,6 +8,7 @@
         "initializer_list": "cpp",
         "ranges": "cpp",
         "utility": "cpp",
-        "sstream": "c"
+        "sstream": "c",
+        "random": "cpp"
     }
 }
