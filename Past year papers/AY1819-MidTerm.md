@@ -169,6 +169,8 @@ The program has to be written for multi core processor to utilize the computing 
 
 False.
 
+1GHz x 4 cores not equals to 4 GHz
+
 ##### iii. There can be up to four program running at the same time on this processor.
 
 True.
@@ -181,102 +183,108 @@ True.
 
 ##### i. Execution cycle of an instruction may take up to three memory accesses.
 
+True.
 
-```c++
-
-```
+Fetch, get operands, store results.
 
 ##### ii. Memory instruction refers only to instruction that moves a value from memory to register.
 
+False.
 
-```c++
-
-```
+Also applies to instruction that moves a value from register to memory.
 
 ##### iii. Instruction and data are stored in the same region in memory.
 
-
-```c++
-
-```
+False.
 
 ##### iv. Store-memory concept refers to the idea of storing computation results in the memory.
 
+False.
 
-```c++
-
-```
+Instruction and data are stored in memory.
 
 # Question 4: Data Representation
 
+#### A. Which of the following is TRUE regarding the data storage in computer?
+
 ##### i. On a 32-bit platform, each double variable in C/C++ needs 64 bit storage in memory.
 
+True.
 
-```c++
+For 32/64 bit platforms:<br>
+char: 1 byte / 1 byte<br>
+short: 2 bytes /2 bytes<br>
+int: 4 bytes / 4 bytes<br>
+long: 4 bytes / 8 bytes<br>
+long long: 8 bytes / 8 bytes<br>
+float: 4 bytes / 4 bytes<br>
+double: **8 bytes** / 8 bytes<br>
+long double: 16 bytes / 16 bytes
 
-```
+*1 bytes = 8 bits*, so double needs 64bit.
 
+##### ii. If a 4-byte word is used to store only non-negative values, then its range is $[0...2^{32} − 1]$
 
-```c++
+True.
 
-```
+4 byte = 32 bit, range is $2^{32}$, -2,147,483,647 to 2,147,483,648
 
+Sacrifice one bit to indicate whether the number is positive or negative, so the range becomes 2,147,483,647 ( $2^{32} - 1$).
 
-```c++
+##### iii. Directly comparing floating point values / variables is not safe because of the overflowing problem.
 
-```
+False.
 
+Directly comparing floating point values / variables is not safe because of the inaccuracy.
 
-```c++
+##### iv. Computer can store either binary, octal (base-8) or hexadecimal (base-16) values in the actual hardware.
 
-```
+False.
 
+Computer can only store binary on the hardware level.
 
-```c++
+#### B.  Which of the following number base related statements is TRUE?
 
-```
+##### i. The decimal number $58_{10}$ is $10_{58}$ in base-58.
 
-47/3 = 15 R 2
+$58_{10}$ 
 
-15/3 = 5 R 0
+= 58 % 58 = 1 R 0
 
-5/3 = 1 R 2
+= 1 % 58 = 0 R 1
 
-1/3 = 0 R 1
+= $10_{58}$, True
 
+##### ii. The decimal number $58_{10}$ is $110010_{2}$ in base-2.
 
-$1202_{3}$
+$58_{10}$ 
 
-##### ii.Express the base-5 number $1010_{5}$ in decimal (base-10)
+= 58 % 2 = 29 R 0
 
-$0 * 5^{0} + 1 * 5^{1} + 0 * 5^{2} + 1 * 5^{3}$
+= 29 % 2 = 14 R 1
 
-= 5 + 125 = $130_{10}$
+= 14 % 2 = 7 R 0
 
-##### iii. Express the base-3 number $2112010_{3}$ in base-9
+= 7 % 2 = 3 R 1
 
-$2112010_{3}$ 
+= 3 % 2 = 1 R 1
 
-$10_{3} = 0 * 3^{0} + 1 * 3^{1} = 3_{9}$
+= 1 % 2 = 0 R 1
 
-$20_{3} = 0 * 3^{0} + 2 * 3^{1} = 6_{9}$
+= $111010_{2}$, False
 
-$11_{3} = 1 * 3^{0} + 1 * 3^{1} = 4_{9}$
+##### iii.The number $101111001_{2}$ is an odd number.
 
-$2_{3} = 2 * 3^{0} = 2_{9}$
+Yes, $1 * 2^{0}$ will get an odd number, hence $101111001_{2}$ is an odd number.
 
-So, $2112010_{3} = 2463_{9}$ 
+##### iv. The hexadecimal number $B7_{16}$ is $267_{8}$ in base-8.
 
-##### iv. Express the hexadecimal (base-16) number $DAD_{16}$ in base-4.
+Breaking down $B7_{16}$
 
-$DAD_{16}$
+$7_{16}$ = $7_{8}$
 
-$D_{16} = 31_{4}$
+$B_{16}$ = $11 * 16^{1}$ = 176 = $26_{8}$
 
-$A_{16} = 22_{4}$
-
-$D_{16} = 31_{4}$
-
-So, $DAD_{16} = 312231_{4}$ 
+Hence, $267_{8}$, True
 
 — END OF PAPER —
