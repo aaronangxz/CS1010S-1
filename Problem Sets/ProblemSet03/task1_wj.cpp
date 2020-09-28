@@ -38,8 +38,7 @@ unsigned long factoriallong(int n)
 What happens to your function when n >= 13? Explain why.
 (Put your answer within the comments)
 Answer: 
-
-When n >= 13, value of n! will be out of int's scope.
+When n >= 13, value of n! will be out of integer's scope.
 */
 
 // c.
@@ -60,12 +59,14 @@ int choose_alt(int n, int k)
     //
     for (int i = n; i >=1 ; i--)
     {
+        //Only compute if n / k / r is larger than i, otherwise * 1 (No change in values)
+        //Each loop is one nCr. E.g. 5C3 will run 5 times, whereas the whole Pascal Triangle row will run 6 times (0 - 5)
         double a = 1.0, b = 1.0, c = 1.0;
         if (n >= i) a = i;
         if (k >= i) b = i;
         if (r >= i) c = i;
         //printf("fact is %lu, a is %d, b is %d, c is %d \n", fact, a, b, c);
-        printf("%f *= %f / (%f * %f)\n", fact, a, b, c);
+        //printf("%f *= %f / (%f * %f)\n", fact, a, b, c);
         fact *= a / (b * c);
     }
     output = fact;
@@ -93,11 +94,11 @@ void pascal_triangle(int row)
 
 int main (void)
 {
-    // int testcase1 = factorial(5);
-    // cout << "Test Case 1 : " << testcase1 << endl;
-    // int testcase2 = choose(8,5);
-    // cout << "Test Case 2 : " << testcase2 << endl;
-    // int testcase3 = choose(13, 2);
-    // cout << "Test Case 3 : " << testcase3 << endl;
-    pascal_triangle(15); 
+    int testcase1 = factorial(5);
+    cout << "Test Case 1 : " << testcase1 << endl;
+    int testcase2 = choose(8,5);
+    cout << "Test Case 2 : " << testcase2 << endl;
+    int testcase3 = choose(13, 2);
+    cout << "Test Case 3 : " << testcase3 << endl;
+    pascal_triangle(5); 
 }
