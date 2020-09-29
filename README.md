@@ -47,7 +47,21 @@ This module aims to <br>
 3. [AY19/20 Practical Exam 1](https://github.com/aaronangxz/CS1010S-1/tree/master/Practical%20Exam/AY1920-Practical_Exam1)<br>
 
 **Test Dates**<br>
-Dates | Test
------------- | -------------
-Midterm Test | 01 Oct 2020 7pm
-Practical Exam 1 | 03 Oct 2020 10am
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Date</th>
+      <th style="text-align: left">Test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">01 Oct 2020 7pm</td>
+      <td style="text-align: left">Midterm Test</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">03 Oct 2020 10am</td>
+      <td style="text-align: left">Practical Exam 1</td>
+    </tr>
+  </tbody>
+</table>
