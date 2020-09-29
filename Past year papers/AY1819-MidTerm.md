@@ -130,6 +130,95 @@ Ans:
 9<br>
 4
 
+# Question 2: Dates
+
+A Georgian calendar date can be presented as a 8-digit integer in the format YYYYMMDD, where YYYY is a 4-digit year, MM is a 2-digit month and DD a 2-digit day.
+
+For example, the date 4th October 2018 is represented as 20181004 .
+
+**A.** The function <code>int compare_dates(int d1, int d2)</code> takes two dates, *d1* and *d2* as inputs and compares them. It returns
+
+* a negative number (< 0) if *d1* is before *d2*, 
+* a positive number (> 0) if *d1* is after *d2*,
+* zero (= 0) if *d1* and *d2* are the same dates.
+
+Provide an implementation for the function <code>compare>/code> .
+
+
+```c++
+int compare(int d1, int d2) 
+{ 
+    return d1 - d2;
+}
+```
+
+**B.** The function int <code>get_num_days(int month, int year)</code> takes a month and year as inputs, and returns the number of days in a month. For example, <code>get_num_days(10, 2018)</code> will return the value 31 .
+
+Why does the function require both month and year as inputs?
+
+Ans: Because of leap years. February has 28 or 29 days depending on the given year.
+
+**C.** The function void inc_date takes a date as input, and increments the date by one day.
+
+For example, the following code segment
+
+
+```c++
+int today = 20181004; 
+
+inc_date(today);
+
+cout << today << endl;
+```
+
+will display 20181005 .
+
+Provide an implementation for the function <code>inc_date</code>. You may assume that the function <code>get_num_days</code> described in part B is given and correct, and that the date input to the function is always a valid date.
+
+
+```c++
+void inc_date(int &date) 
+{ 
+    date += 1;
+    int year = date / 10000;
+    int month = (date / 100) % 100; 
+    int day = date % 100;
+    
+    // max days in current month
+    int m_days = get_num_days(month); 
+    if (day > m_days) 
+    {
+        day = 1;
+        month += 1;
+        if (month > 12) 
+        {
+            month = 1;
+            year += 1; 
+        }
+        // Update the date
+        date = year * 10000 + month * 100 + day; 
+    }
+}
+```
+
+**D.** The function <code>int num_days_between(int d1, int d2)</code> takes two dates as input, and returns the number of days between the dates.
+
+Provide an implementation for the function <code>num_days_between</code>. You may assume that *d1* is no later than *d2*, and may reuse any function previously defined in this question. 
+
+
+```c++
+int num_days_between(int d1, int d2) 
+{ 
+    int days = 0;
+    while (d1 < d2) 
+    { 
+        inc_date(d1);
+        days += 1; 
+    }
+    return days;
+}
+```
+
 # Question 3: Computing Topics 
 
 ### A. Computer Organisation
