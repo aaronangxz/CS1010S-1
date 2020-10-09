@@ -2,47 +2,80 @@
 
 using namespace std;
 
-void print_cells(char chara)
+void print_cells(bool cells[],int size)
 {
-    printf("%c",chara);
+    for (int i = 0; i < size; i++)
+        {
+            if (cells[i] == 1)
+            {
+                printf("X");
+            }
+            else if (cells[i] == 0)
+            {
+                printf("_");
+            }
+        }
+}
+
+void next_gen_cells (bool cells[],int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if ((i + 1 ) < size)
+        {
+            // if (cells[i])
+            // {
+            //     cells[i] = 0;
+            //     cells[i-1] = 1;
+            //     //cells[size - i + 1] = 1;
+            //     cells[i+1] = 1;
+            // }
+            // if (cells[i] == 0 && cells[i-1] == 1 )
+            // {
+            //     //cells[i+1] = 1;
+            //     cells[i] = 1;
+            // }
+            
+            
+            if (cells[i] == 0)
+            {
+                if (cells[i+1]==1)
+                {
+                    cells[i] = 1;
+                }
+            }
+            else if (cells[i] == 1)
+            {
+                cells[i] = 0;
+            }
+            else if (cells[i] == 0 && cells[i-1] == 1)
+            {
+                cells[i] = 1;
+            }
+            
+            
+
+        }
+        
+    }
 }
 
 void game_of_life(bool cells[], int size, int num_gen) 
 {
-    for (int i = 0; i < num_gen; i++)
+    //First gen
+    print_cells(cells,size);
+    cout << endl;
+    
+    for (int i = 1; i < num_gen ; i++)
     {
-        // if (cells[i-1] ==0 && cells[i] == 1 && cells[i+1] == 0)
-        //     {
-        //         //print_cells('X');
-        //         cells[i-1] = 1;
-        //         cells[i+1] = 1;
-        //         cells[i] = 0;
-        //     }
-
-        for (int i = 0; i < size; i++)
-        {
-            if (cells[i] == 1)
-            {
-                //print_cells('X');
-                printf("X");
-            }
-            //print_cells('_');
-            printf("_");
-        }
-
-        
-
+        next_gen_cells(cells,size);
+        print_cells(cells,size);
         printf("\n");
     }
-    
+
 
     
     
-}
-
-void next_gen (bool cells[])
-{
-
 }
 
 int main(void) 
@@ -50,4 +83,5 @@ int main(void)
     //int cells[]={0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0};
     //game_of_life({0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 15, 9);
     game_of_life((bool []){0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 15, 9);
+    //game_of_life((bool []){0, 1, 0, 1, 0, 1, 0, 1, 0}, 9, 1);
 }
