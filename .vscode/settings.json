@@ -9,6 +9,7 @@
         "ranges": "cpp",
         "utility": "cpp",
         "sstream": "c",
-        "random": "cpp"
+        "random": "cpp",
+        "string": "cpp"
     }
 }
