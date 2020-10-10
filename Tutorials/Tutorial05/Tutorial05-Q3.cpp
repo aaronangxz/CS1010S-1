@@ -19,63 +19,52 @@ void print_cells(bool cells[],int size)
 
 void next_gen_cells (bool cells[],int size)
 {
+    bool new_cells[size];
+
     for (int i = 0; i < size; i++)
     {
-        if ((i + 1 ) < size)
+        if (cells[i])
         {
-            // if (cells[i])
-            // {
-            //     cells[i] = 0;
-            //     cells[i-1] = 1;
-            //     //cells[size - i + 1] = 1;
-            //     cells[i+1] = 1;
-            // }
-            // if (cells[i] == 0 && cells[i-1] == 1 )
-            // {
-            //     //cells[i+1] = 1;
-            //     cells[i] = 1;
-            // }
-            
-            
-            if (cells[i] == 0)
+            new_cells[i] = false;
+        }
+        else 
+        {
+            int neighbours = 0;
+            if (i > 0 && cells[i - 1])
             {
-                if (cells[i+1]==1)
-                {
-                    cells[i] = 1;
-                }
+                neighbours ++;
             }
-            else if (cells[i] == 1)
+            if (i < size - 1 && cells[ i + 1])
             {
-                cells[i] = 0;
+                neighbours ++;
             }
-            else if (cells[i] == 0 && cells[i-1] == 1)
+            if (neighbours == 1)
             {
-                cells[i] = 1;
+                new_cells[i] = true;
             }
-            
-            
-
+            else
+            {
+                new_cells[i] = false;
+            }
         }
         
     }
+    for (int i = 0; i < size; i++)
+    {
+        cells[i] = new_cells[i];
+    }
+    
 }
 
 void game_of_life(bool cells[], int size, int num_gen) 
 {
-    //First gen
-    print_cells(cells,size);
-    cout << endl;
     
-    for (int i = 1; i < num_gen ; i++)
+    for (int i = 0; i < num_gen ; i++)
     {
-        next_gen_cells(cells,size);
         print_cells(cells,size);
+        next_gen_cells(cells,size);
         printf("\n");
     }
-
-
-    
-    
 }
 
 int main(void) 
