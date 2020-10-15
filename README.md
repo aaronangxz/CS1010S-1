@@ -24,6 +24,7 @@ This module aims to <br>
 3. [Tutorial 3](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial03)<br>
 4. [Tutorial 4](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial04)<br>
 5. [Tutorial 5](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial05)<br>
+6. [Tutorial 5](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial06)<br>
 
 **Lab**<br>
 1. [Lab 0](https://github.com/aaronangxz/CS1010S-1/tree/master/Lab/Lab01)<br>
