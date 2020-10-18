@@ -13,8 +13,35 @@ char shift_char(char c, int n) {
 }
 
 
-string & rotate(string &s, int n) {
+string & rotate(string &s, int n) 
+{
+    string new_s;
+    int len = s.length();
+    n %= len;
 
+    if (n > 0)
+    {
+        for (int i = n; i < len; i++)
+        {
+            new_s.push_back(s[i]);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            new_s.push_back(s[i]);
+        }
+    }
+    else
+    {
+        for (int i = len + n; i < len; i++)
+        {
+            new_s.push_back(s[i]);
+        }
+        for (int i = 0; i < len + n - 1; i++)
+        {
+            new_s.push_back(s[i]);
+        }
+    }
+    return new_s;
 }
 
 
@@ -23,8 +50,10 @@ string & rotate(string &s, int n) {
 // TASK 2 //
 //--------//
 
-string & caeser(string &s, int n) {
-
+string & caeser(string &s, int n) 
+{
+ 
+    
 }
 
 
@@ -80,8 +109,8 @@ int main(void) {
     // cout << shift_char('c', 2) << endl;
     // cout << shift_char('c', -2) << endl;
 
-    // cout << rotate(text, 3) << endl;
-    // cout << rotate(text, -3) << endl;
+    cout << rotate(text, 3) << endl;
+    cout << rotate(text, -3) << endl;
 
     // cout << caeser(text, 3) << endl;
     // cout << caeser(text, -3) << endl;
