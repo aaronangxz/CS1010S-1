@@ -35,7 +35,7 @@ void print_song(int n)
                     cout << "and " << gifts1[j] << endl;
                 }
             }
-            //When it's printing day 1 and when it is in the final loop, omit "and" in the sentence
+            //Omit "and" in the sentences
             else
             {
                 cout << gifts1[j] << endl;
