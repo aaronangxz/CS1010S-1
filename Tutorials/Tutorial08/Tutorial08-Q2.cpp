@@ -6,23 +6,24 @@ using namespace std;
 
 int count(FILE *fp) 
 {
-    int alphabet = 0, count = 0;
+    int alphabet = 0, count = 0, blank = 0;
 
     while ((alphabet = fgetc(fp)) != EOF)
     {
         if (alphabet == ' ' || alphabet == '\n')
         {
+            if ((alphabet = fgetc(fp))== '\n')
+            {
+                fseek(fp,-1,1);
+                blank++;
+            }
+            
             count++;
-        } 
 
-        if (alphabet == '\0')
-        {
-            count --;
-        }
-        //Problem: Need to remove empty lines after newline
+        } 
         
     }
-    return count;
+    return count - blank;
 }
 
 int main(void)
