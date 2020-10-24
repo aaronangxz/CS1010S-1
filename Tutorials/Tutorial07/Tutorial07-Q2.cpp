@@ -11,7 +11,7 @@ void h(int& i)
 
 void g(int* i) 
 { 
-    cout << "input *i in g: " << *i << endl;
+    cout << "input *i in g: " << *&i << endl;
     *i = 22;
     cout << "*i in g: " << *i << endl;
     h( *i );
