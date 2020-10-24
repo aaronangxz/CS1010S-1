@@ -1,6 +1,6 @@
 
 <img src="http://www.nus.edu.sg/images/default-source/identity-images/NUS_logo_full-vertical.jpg" alt="NUS" width="100"/>
-<h1>CS1010S-1 / TIC1001</h1>
+<h1>CS1010 / TIC1001</h1>
 
 ![Image of MEME](https://i.imgur.com/IucRlyv.jpg)
 
@@ -17,6 +17,8 @@ This module aims to <br>
 4. Functional Abstraction and Pointers<br>
 5. Compilation & Data<br>
 6. Strings and Arrays<br>
+7. Strings and Vectors<br>
+8. Strings and Memory & Cache<br>
 
 **Tutorial**<br>
 1. [Tutorial 1](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial01)<br>
@@ -24,7 +26,9 @@ This module aims to <br>
 3. [Tutorial 3](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial03)<br>
 4. [Tutorial 4](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial04)<br>
 5. [Tutorial 5](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial05)<br>
-6. [Tutorial 5](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial06)<br>
+6. [Tutorial 6](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial06)<br>
+7. [Tutorial 7](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial07)<br>
+8. [Tutorial 8](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial08)<br>
 
 **Lab**<br>
 1. [Lab 0](https://github.com/aaronangxz/CS1010S-1/tree/master/Lab/Lab01)<br>
@@ -63,6 +67,14 @@ This module aims to <br>
     <tr>
       <td style="text-align: left">03 Oct 2020 10am</td>
       <td style="text-align: left">Practical Exam 1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TBC</td>
+      <td style="text-align: left">Practical Exam 2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">01 Dec 2020 5pm</td>
+      <td style="text-align: left">Final Exam</td>
     </tr>
   </tbody>
 </table>
