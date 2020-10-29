@@ -5,21 +5,20 @@ using namespace std;
 
 void to_upper(FILE *in, FILE *out) 
 {
-    int letters;
-
-    while ((letters = fgetc(in)) != EOF)
+    char letter;
+    int Prev_symbol;
+    int Prev_alpha = 0;
+    
+    while((letter = fgetc(in))!=EOF)
     {
-        if (letters == ' ' || letters == '\n') 
+        if (!Prev_alpha && Prev_symbol != 39 && islower(letter))
         {
-            letters = fgetc(in);
-            if (isalpha(letters)) 
-            {
-                fseek(in, -1, 1);
-                fputc(toupper(letters), in);
-            }
+            letter = toupper(letter);
         }
-        fprintf(out,"%c",letters);
-    } 
+        fprintf(out,"%c",letter);
+        Prev_alpha = isalpha(letter);
+        Prev_symbol = letter;
+    }
 }
 
 int main(void)
