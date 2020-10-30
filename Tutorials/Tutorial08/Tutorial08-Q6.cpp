@@ -5,30 +5,45 @@ using namespace std;
 
 void reverse(FILE *in, FILE *out) 
 {
-    char letter;
-    int charcount;
+    char line;
+    int count = 0;
 
-    fseek(in, 0L, SEEK_END);
-    int loc = ftell(in);
-    
-    while((letter = fgetc(in))!=EOF)
+    while((!feof(in)))
     {
-        if (letter != ',' || letter != ',')
+        if (!feof(in))
         {
-            charcount ++;        
+            line = fgetc(in);
+            fseek(out,0,2);
+            fprintf(out,"%s",line);
         }
     }
+    
+    
+    
+    // char letter;
+    // int charcount;
 
-    loc = loc-1;
+    // fseek(in, 0L, SEEK_END);
+    // int loc = ftell(in);
+    
+    // while((letter = fgetc(in))!=EOF)
+    // {
+    //     if (letter != ',' || letter != ',')
+    //     {
+    //         charcount ++;        
+    //     }
+    // }
+
+    // loc = loc-1;
 
 
-    while(loc >= 0L) 
-    {
-        fseek(in, loc, SEEK_SET);
-        letter = fgetc(in);
-        fputc(letter, out);
-        loc--;
-    }
+    // while(loc >= 0L) 
+    // {
+    //     fseek(in, loc, SEEK_SET);
+    //     letter = fgetc(in);
+    //     fputc(letter, out);
+    //     loc--;
+    // }
 
     // while((letter = fgetc(in))!=EOF)
     // {

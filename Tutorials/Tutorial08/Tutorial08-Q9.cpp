@@ -6,8 +6,6 @@ using namespace std;
 void copy(FILE *in, FILE *out) 
 {
     char letter;
-    int charcount;
-    
     while((letter = fgetc(in))!=EOF)
     {
         fputc(letter,out);
