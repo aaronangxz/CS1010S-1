@@ -10,10 +10,7 @@ int count(FILE *fp)
 
     while ((alphabet = fgetc(fp)) != EOF)
     {
-        if ((alphabet >= 65 && alphabet <= 90) || (alphabet >= 97 && alphabet <= 122))
-        {
-            count++;
-        } 
+        count += isalpha(alphabet)? 1 : 0;
     }
     return count;
 }

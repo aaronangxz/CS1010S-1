@@ -9,7 +9,7 @@ int count(FILE *fp)
     int alphabet = 0, count = 0, blank = 0;
 
     while ((alphabet = fgetc(fp)) != EOF)
-    {
+    {        
         if (alphabet == ' ' || alphabet == '\n')
         {
             if ((alphabet = fgetc(fp))== '\n')
@@ -17,11 +17,8 @@ int count(FILE *fp)
                 fseek(fp,-1,1);
                 blank++;
             }
-            
             count++;
-
         } 
-        
     }
     return count - blank;
 }

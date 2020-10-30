@@ -11,10 +11,7 @@ void to_upper(FILE *in, FILE *out)
     
     while((letter = fgetc(in))!=EOF)
     {
-        if (!Prev_alpha && Prev_symbol != 39 && islower(letter))
-        {
-            letter = toupper(letter);
-        }
+        letter = !Prev_alpha && Prev_symbol != 39 && islower(letter) ? toupper(letter) : 0;
         fprintf(out,"%c",letter);
         Prev_alpha = isalpha(letter);
         Prev_symbol = letter;

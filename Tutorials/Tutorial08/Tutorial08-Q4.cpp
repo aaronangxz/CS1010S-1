@@ -8,10 +8,7 @@ void to_upper(FILE *in, FILE *out)
 
     while ((letters = fgetc(in)) != EOF)
     {
-        if (letters >= 97 && letters <= 122)
-        {
-            letters -= 32;   
-        } 
+        letters -= letters >= 97 && letters <= 122 ? 32 : 0;
         fprintf(out,"%c",letters);
     } 
 }

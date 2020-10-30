@@ -10,10 +10,7 @@ int count(FILE *fp)
 
     while ((alphabet = fgetc(fp)) != EOF)
     {
-        if (alphabet == 46)
-        {
-            count++;
-        } 
+        count += alphabet == 46 ? 1 : 0;
     }
     return count;
 }
