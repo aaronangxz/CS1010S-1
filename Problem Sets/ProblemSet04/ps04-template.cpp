@@ -8,10 +8,21 @@ using namespace std;
 // TASK 1 //
 //--------//
 
-char shift_char(char c, int n) {
+char shift_char(char c, int n) 
+{
+    bool isLower = (c >= 'a' && c <= 'z')? 1 : 0 ;
+    c += n % 26;
 
+    while (isLower && c < 'a')
+        c += 26;
+    while (isLower && c > 'z')
+        c -= 26;
+    while (!isLower && c > 'Z')
+        c -= 26;
+    while (!isLower && c < 'A')
+        c += 26;
+    return c;
 }
-
 
 string & rotate(string &s, int n) 
 {
@@ -36,12 +47,12 @@ string & rotate(string &s, int n)
         {
             new_s.push_back(s[i]);
         }
-        for (int i = 0; i < len + n - 1; i++)
+        for (int i = 0; i < len + n ; i++)
         {
             new_s.push_back(s[i]);
         }
     }
-    return new_s;
+    return s = new_s;
 }
 
 
@@ -105,12 +116,13 @@ int main(void) {
     string key = "phqgiumeaylnofdxjkrcvstzwb";
     vector<int> vkey = {7, 5, -6, 22, -13, 6};
 
-    // Uncomment to test the different functions
-    // cout << shift_char('c', 2) << endl;
-    // cout << shift_char('c', -2) << endl;
+    //Uncomment to test the different functions
+    cout << shift_char('c', 2) << endl;
+    cout << shift_char('c', -2) << endl;
+    cout << shift_char('g', 20) << endl;
 
-    cout << rotate(text, 3) << endl;
-    cout << rotate(text, -3) << endl;
+    // cout << rotate(text, 3) << endl;
+    // cout << rotate(text, -3) << endl;
 
     // cout << caeser(text, 3) << endl;
     // cout << caeser(text, -3) << endl;
