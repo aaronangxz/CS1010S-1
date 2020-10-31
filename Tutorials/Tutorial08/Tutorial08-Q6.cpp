@@ -1,22 +1,39 @@
 #include <iostream>
 #include <ctype.h>
-
+#include <string.h>
 using namespace std;
 
 void reverse(FILE *in, FILE *out) 
 {
-    char line;
-    int count = 0;
-
-    while((!feof(in)))
+    char buff[1000];
+    while (fgets(buff,1000,in) != NULL)
     {
-        if (!feof(in))
+        int i = strlen(buff) - 1;
+        if (buff[i] == '\n')
         {
-            line = fgetc(in);
-            fseek(out,0,2);
-            fprintf(out,"%s",line);
+            i--;
         }
+        for ( ; i >= 0; i--)
+        {
+            fputc(buff[i],out);
+        }
+        fputc('\n',out);
     }
+    
+    
+    
+    // char line;
+    // int count = 0;
+
+    // while((!feof(in)))
+    // {
+    //     if (!feof(in))
+    //     {
+    //         line = fgetc(in);
+    //         fseek(out,0,2);
+    //         fprintf(out,"%s",line);
+    //     }
+    // }
     
     
     

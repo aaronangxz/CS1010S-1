@@ -7,7 +7,7 @@ void interleave(FILE *in1, FILE *in2, FILE *out)
 {
     char line1[999], line2[999];
    
-    while((!feof(in1)) && (!feof(in2)))
+    while((!feof(in1)) || (!feof(in2)))
     {
         if (!feof(in1))
         {

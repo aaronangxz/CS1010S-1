@@ -5,29 +5,23 @@ using namespace std;
 
 void to_upper(FILE *in, FILE *out) 
 {
-    char letter;
-    int Prev_symbol = 46 ;
-    int Prev_alpha = 0;
-    int prevprev;
-    
-    while((letter = fgetc(in))!=EOF)
+    int c;
+    bool sentence = true;
+    while((c = fgetc(in))!= EOF)
     {
-        prevprev = fseek(in, -2, 1);
-        if (Prev_symbol == 46 || prevprev == 46 && islower(letter))
+        if(isalpha(c) && !isspace(c) && sentence)
         {
-            letter = toupper(letter);                
-        }
-        if (Prev_symbol == '\n')
+            if(islower(c))
             {
-                if (prevprev == '.')
-                {
-                    letter = toupper(letter);                
-                }
-                
+                c -= 32;
             }
-        fprintf(out,"%c",letter);
-        Prev_alpha = isalpha(letter);
-        Prev_symbol = letter;
+            sentence = false;
+        }
+        else if(c == '.')
+        {
+            sentence = true;
+        }
+        fputc(c,out);
     }
 }
 
