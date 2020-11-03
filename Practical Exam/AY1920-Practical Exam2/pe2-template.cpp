@@ -8,9 +8,19 @@ using namespace std;
  *  Part A  * 
  ************/
 int pile(vector<int> game, int n) {
-    // Your answer here
-    
-    return 0;
+    int match;
+    for (int i = 0; i < game.size(); i++)
+    {
+        if (n >= game[i])
+        {
+            match = i;
+        }
+        else
+        {
+            match = i - 1;
+        }
+    }
+    return match;
 }
 
 
