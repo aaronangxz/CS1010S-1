@@ -47,19 +47,46 @@ void remove(vector<int> &game, int pile, int n) {
  ************/
 void split(vector<int> &game, int first, int last) 
 {   
-    if (pile(game,first) == pile(game,last))
+    for (int i = 0; i < game.size(); i++)
     {
-        for (int i = first; i <= last; i++)
+        //Invalid case
+        if (first <= game[i] && last > game[i])
         {
-            remove(game,pile(game,first),i);
+            return;
         }
-        
-        
-        
-        
-    }
-
-    
+        //Matched pile
+        if (last <= game[i])
+        {
+            //first must be more than 1, 1 will cross over to previous pile
+            if (first > 1)
+            {
+                //split pile and duplicate to next pile
+                game.insert(game.begin() + i,game[i]);
+                //Fill in current pile with first - 1. 
+                //I.e. if first is 3, we are keeping 1 & 2 
+                game[i] = first - 1;
+                //Go to next pile to execute last
+                i++;
+            }
+            //If last is exactly equals to last pile, remove the entore pile
+            if (last == game[i])
+            {
+                game.erase(game.begin() + i);
+            }
+            //If not, deduct number of sticks in current pile by last
+            else
+            {
+                game[i] -= last;
+            }
+            return;
+        }
+        //Not matched, deduct current pile sticks and continue to next loop
+        else
+        {
+            first -= game[i];
+            last -= game[i];
+        }
+    }  
 }
 
 /*** Special code to allow you to directly cout a vector of int ***/
