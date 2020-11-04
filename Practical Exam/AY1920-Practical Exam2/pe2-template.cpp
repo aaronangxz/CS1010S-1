@@ -28,16 +28,37 @@ int pile(vector<int> game, int n) {
  *  Part B  * 
  ************/
 void remove(vector<int> &game, int pile, int n) {    
-    // Your answer here
-
+    for (int i = 0; i < game.size(); i++)
+    {
+        if (i == pile)
+        {
+            game[i] -= n;
+        }
+        if (game[i] == 0)
+        {
+            game.erase(game.begin() + i);
+        }
+    }
 }
 
 
 /************
  *  Part C  * 
  ************/
-void split(vector<int> &game, int first, int last) {   
-    // Your answer here 
+void split(vector<int> &game, int first, int last) 
+{   
+    if (pile(game,first) == pile(game,last))
+    {
+        for (int i = first; i <= last; i++)
+        {
+            remove(game,pile(game,first),i);
+        }
+        
+        
+        
+        
+    }
+
     
 }
 
