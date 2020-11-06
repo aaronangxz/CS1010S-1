@@ -1,8 +1,27 @@
 #include <stdio.h>
 #include <iostream>
 
-int distance(int num, int capacity, int delay, int t) {
-    // your code here
+int distance(int num, int capacity, int delay, int t) 
+{
+    int speed = 0, dist = 0, time = 0;
+    for (int i = 1; i <= num; i++)
+    {
+        for (int j = 0; j < capacity; j++)
+        {
+            time ++;
+            if (time == delay)
+            {
+                /* code */
+            }
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
 }
 
 int main() {
