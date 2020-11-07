@@ -1,39 +1,53 @@
-//Implement the function count(FILE *fp) that returns the number of alphabatical letters in the file fp.
-
 #include <iostream>
 
 using namespace std;
 
 int readFAT( FILE* input, int fat[])
 {
-    int read;
-    int x;
-    int size;
-
-    cout << "File name: " << input << endl;
-
-    cout << "FAT size is " << size << endl;
-
-    while ((!feof(input)))
+    int size, i;
+    fscanf(input,"%d",&size);
+    for (int i = 0; i < size; i++)
     {
-        cin >> x;
-        printFAT(fat,i);
-        
+        fscanf(input,"%d",&(fat[i]));
     }
-
+    return size;
 }
 
 void printFAT( int fat[], int size)
 {
-    cout << size << "[" << fat << "]" << endl;
+    int i;
+    for ( i = 0; i < size; i++)
+    {
+        printf("%3d[%3d]",i,fat[i]);
+    }
 }
 
 void printFileAt( int fat[], int start)
 {
-
+    int idx = start;
+    while (idx != -1)
+    {
+        printf("%d",idx);
+        idx = fat[idx];
+    }
+    printf("\n");
 }
 
 int main(void)
 {
-    //count(<pop.txt>);
+    FILE* input;
+    char filename[999];
+    int i, fat[1024], size, start;
+
+    printf("File name: ");
+    scanf("%s",filename);
+    
+    input = fopen(filename,"r");
+    size = readFAT(input,fat);
+    printFAT(fat,size);
+
+    while (scanf("%d",&start)==1)
+    {
+        printFileAt(fat,start);
+    }
 }
