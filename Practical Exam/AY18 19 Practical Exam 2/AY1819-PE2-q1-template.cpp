@@ -1,26 +1,28 @@
 #include <stdio.h>
 #include <iostream>
 
+using namespace std;
+
 int distance(int num, int capacity, int delay, int t) 
 {
-    int speed = 0, dist = 0, time = 0;
-    for (int i = 1; i <= num; i++)
+    int speed = 0, dist = 0, engineOn = 0,engineOff = 0;
+
+    for (int i = 0; i <= t; i++)
     {
-        for (int j = 0; j < capacity; j++)
+        dist += speed;
+        if ((delay % i == 0) && engineOn < num)
         {
-            time ++;
-            if (time == delay)
-            {
-                /* code */
-            }
-            
+            engineOn++;
         }
+        if (i >= capacity && engineOff < num )
+        {
+            engineOff++;
+        }
+        speed += engineOn - engineOff;
     }
     
     
-    
-    
-    
+    return dist;
     
 }
 
