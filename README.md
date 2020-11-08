@@ -29,6 +29,7 @@ This module aims to <br>
 6. [Tutorial 6](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial06)<br>
 7. [Tutorial 7](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial07)<br>
 8. [Tutorial 8](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial08)<br>
+9. [Tutorial 9](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial09)<br>
 
 **Lab**<br>
 1. [Lab 0](https://github.com/aaronangxz/CS1010S-1/tree/master/Lab/Lab01)<br>
@@ -69,7 +70,7 @@ This module aims to <br>
       <td style="text-align: left">Practical Exam 1</td>
     </tr>
     <tr>
-      <td style="text-align: left">TBC</td>
+      <td style="text-align: left">12 Nov 2020 7pm</td>
       <td style="text-align: left">Practical Exam 2</td>
     </tr>
     <tr>
