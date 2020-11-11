@@ -18,7 +18,10 @@ This module aims to <br>
 5. Compilation & Data<br>
 6. Strings and Arrays<br>
 7. Strings and Vectors<br>
-8. Strings and Memory & Cache<br>
+8. Memory & Cache<br>
+9. Files & Streams<br>
+10. Operating System<br>
+11. Database Management System<br>
 
 **Tutorial**<br>
 1. [Tutorial 1](https://github.com/aaronangxz/CS1010S-1/tree/master/Tutorials/Tutorial01)<br>
@@ -41,6 +44,7 @@ This module aims to <br>
 2. [Problem Set 02: Colourspace Conversion, Taxi Fare](https://github.com/aaronangxz/CS1010S-1/tree/master/Problem%20Sets/ProblemSet02)<br>
 3. [Problem Set 03: Pascal's Triangle, Calendar](https://github.com/aaronangxz/CS1010S-1/tree/master/Problem%20Sets/ProblemSet03)<br>
 4. [Problem Set 03.1: Maya Calendar](https://github.com/aaronangxz/CS1010S-1/tree/master/Problem%20Sets/ProblemSet03.1)<br>
+5. [Problem Set 04: Cipher Codes](https://github.com/aaronangxz/CS1010S-1/tree/master/Problem%20Sets/ProblemSet04)<br>
 
 **Extra**<br>
 1. [Practice on Basic C Expressions](https://github.com/aaronangxz/CS1010S-1/tree/master/Practice/Practice-on-basic-C-expressions)<br>
