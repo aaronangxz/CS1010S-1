@@ -55,6 +55,9 @@ This module aims to <br>
 1. [AY17/18 Practical Exam 1](https://github.com/aaronangxz/CS1010S-1/tree/master/Practical%20Exam/AY1718-Practical_Exam1)<br>
 2. [AY18/19 Practical Exam 1](https://github.com/aaronangxz/CS1010S-1/tree/master/Practical%20Exam/AY1819-Practical_Exam1)<br>
 3. [AY19/20 Practical Exam 1](https://github.com/aaronangxz/CS1010S-1/tree/master/Practical%20Exam/AY1920-Practical_Exam1)<br>
+4. AY17/18 Practical Exam 2<br>
+5. AY18/19 Practical Exam 2<br>
+6. AY19/20 Practical Exam 2<br>
 
 **Test Dates**<br>
 <table>
