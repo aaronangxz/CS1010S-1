@@ -20,8 +20,3 @@ vector<bool> And(vector<bool> v1, vector<bool> v2)
     }
     return v1;
 }
-
-int main (void)
-{
-    return 0;
-}
