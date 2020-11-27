@@ -61,7 +61,8 @@ This module aims to <br>
 
 **Mid Term / Exam**<br>
 1. AY19/20 Mid Term<br>
-2. AY19/20 Exam<br>
+2. AY20/21 Mid Term<br>
+3. AY19/20 Exam<br>
 
 **Test Dates**<br>
 <table>
