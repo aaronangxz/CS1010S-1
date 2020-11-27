@@ -59,6 +59,10 @@ This module aims to <br>
 5. AY18/19 Practical Exam 2<br>
 6. AY19/20 Practical Exam 2<br>
 
+**Mid Term / Exam**<br>
+1. AY19/20 Mid Term<br>
+2. AY19/20 Exam<br>
+
 **Test Dates**<br>
 <table>
   <thead>
