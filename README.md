@@ -92,10 +92,10 @@ This module aims to <br>
   </tbody>
 </table>
 <br>
-Mid Term: 41/50<br>
+Mid Term: 21/30<br>
 PE1: 5/10<br>
 PE2: 7.5/10<br>
 Coursemology: 20/20<br>
-Final Exam: 41/50<br>
+Final Exam: 41/45<br>
 <br>
 Final Grade: A
