@@ -91,3 +91,11 @@ This module aims to <br>
     </tr>
   </tbody>
 </table>
+<br>
+Mid Term: 41/50<br>
+PE1: 5/10<br>
+PE2: 7.5/10<br>
+Coursemology: 20/20<br>
+Final Exam: 41/50<br>
+<br>
+Final Grade: A
